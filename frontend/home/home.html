@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Event Management</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            Event<span>Hub</span>
+        </div>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="signup-btn">Sign Up</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="hero-small">WELCOME TO EVENTHUB</p>
+
+                <h1>
+                    Discover Events.
+                    <span>Make Memories.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Find exciting events, explore new experiences
+                    and book your tickets easily.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#events" class="primary-btn">Explore Events</a>
+                    <a href="#about" class="secondary-btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-icon">🎫</div>
+                <h2>Find Your Next Event</h2>
+                <p>Music, sports, workshops, conferences and more.</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search for events..."
+                >
+
+                <select id="categorySelect">
+                    <option value="all">All Categories</option>
+                    <option value="music">Music</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                    <option value="workshop">Workshop</option>
+                </select>
+
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
+
+        <section class="events-section" id="events">
+
+            <div class="section-heading">
+                <p>EXPLORE</p>
+                <h2>Popular Events</h2>
+                <span>
+                    Discover some of the most exciting upcoming events.
+                </span>
+            </div>
+
+            <div class="event-grid" id="eventGrid">
+
+                <div class="event-card" data-category="music">
+                    <div class="event-image music-image">
+                        🎵
+                    </div>
+
+                    <div class="event-content">
+                        <span class="event-category">Music</span>
+
+                        <h3>Live Music Festival</h3>
+
+                        <p class="event-date">
+                            📅 15 October 2026
+                        </p>
+
+                        <p class="event-location">
+                            📍 Mathura, Uttar Pradesh
+                        </p>
+
+                        <div class="event-bottom">
+                            <strong>₹499</strong>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="technology">
+                    <div class="event-image tech-image">
+                        💻
+                    </div>
+
+                    <div class="event-content">
+                        <span class="event-category">Technology</span>
+
+                        <h3>Tech Innovation Summit</h3>
+
+                        <p class="event-date">
+                            📅 22 October 2026
+                        </p>
+
+                        <p class="event-location">
+                            📍 New Delhi, India
+                        </p>
+
+                        <div class="event-bottom">
+                            <strong>₹799</strong>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="sports">
+                    <div class="event-image sports-image">
+                        🏆
+                    </div>
+
+                    <div class="event-content">
+                        <span class="event-category">Sports</span>
+
+                        <h3>University Sports Meet</h3>
+
+                        <p class="event-date">
+                            📅 28 October 2026
+                        </p>
+
+                        <p class="event-location">
+                            📍 Agra, Uttar Pradesh
+                        </p>
+
+                        <div class="event-bottom">
+                            <strong>₹299</strong>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="workshop">
+                    <div class="event-image workshop-image">
+                        🎨
+                    </div>
+
+                    <div class="event-content">
+                        <span class="event-category">Workshop</span>
+
+                        <h3>Creative Design Workshop</h3>
+
+                        <p class="event-date">
+                            📅 2 November 2026
+                        </p>
+
+                        <p class="event-location">
+                            📍 Mathura, Uttar Pradesh
+                        </p>
+
+                        <div class="event-bottom">
+                            <strong>₹399</strong>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <p id="noEvents" class="no-events">
+                No events found.
+            </p>
+
+        </section>
+
+        <section class="categories" id="categories">
+
+            <div class="section-heading">
+                <p>CATEGORIES</p>
+                <h2>Find Events By Category</h2>
+            </div>
+
+            <div class="category-grid">
+
+                <div class="category-card">
+                    <div>🎵</div>
+                    <h3>Music</h3>
+                    <p>Concerts and live performances</p>
+                </div>
+
+                <div class="category-card">
+                    <div>🏆</div>
+                    <h3>Sports</h3>
+                    <p>Sports events and competitions</p>
+                </div>
+
+                <div class="category-card">
+                    <div>💻</div>
+                    <h3>Technology</h3>
+                    <p>Technology and innovation events</p>
+                </div>
+
+                <div class="category-card">
+                    <div>🎨</div>
+                    <h3>Workshop</h3>
+                    <p>Learn new skills and ideas</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="about-section" id="about">
+
+            <div class="about-content">
+                <p>ABOUT US</p>
+
+                <h2>
+                    Making Event Booking
+                    Simple and Convenient
+                </h2>
+
+                <p>
+                    EventHub is a frontend-based event management platform
+                    designed to help users discover events and experience
+                    a simple ticket booking interface.
+                </p>
+
+                <p>
+                    Users can browse events, explore event information
+                    and continue to the booking process through an
+                    attractive and responsive interface.
+                </p>
+            </div>
+
+            <div class="about-box">
+                <div class="about-stat">
+                    <strong>100+</strong>
+                    <span>Events</span>
+                </div>
+
+                <div class="about-stat">
+                    <strong>10K+</strong>
+                    <span>Users</span>
+                </div>
+
+                <div class="about-stat">
+                    <strong>24/7</strong>
+                    <span>Access</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="contact-section" id="contact">
+
+            <div class="section-heading">
+                <p>CONTACT</p>
+                <h2>Get In Touch</h2>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+
+                <div class="form-row">
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your Email"
+                    >
+                </div>
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                ></textarea>
+
+                <button type="submit" class="primary-btn">
+                    Send Message
+                </button>
+
+                <p id="formMessage"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+
+            <div>
+                <h2>Event<span>Hub</span></h2>
+                <p>
+                    Discover events and make memorable experiences.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#events">Events</a>
+                <a href="#about">About</a>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <p>eventhub@example.com</p>
+                <p>+91 98765 43210</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 EventHub. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+
+</body>
+</html>
