@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fc;
+    color: #222;
+}
+
+header {
+    min-height: 70px;
+    padding: 0 7%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 span {
+    color: #6c4df6;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+}
+
+.profile-container {
+    width: 86%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.profile-card {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    background: #eee8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+}
+
+.profile-card h2 {
+    margin-top: 15px;
+}
+
+.profile-card p {
+    color: #777;
+}
+
+.profile-card button {
+    margin-top: 20px;
+    border: none;
+    padding: 11px 20px;
+    background: #6c4df6;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.profile-details,
+.booking-section {
+    background: white;
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 15px;
+}
+
+.info-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.info-grid label {
+    color: #777;
+    font-size: 13px;
+}
+
+.info-grid p {
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.booking-card {
+    margin-top: 18px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+.confirmed {
+    color: green;
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

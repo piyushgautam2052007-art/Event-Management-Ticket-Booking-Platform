@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <header>
+        <h1>Event<span>Hub</span></h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Events</a>
+            <a href="#">Bookings</a>
+            <a href="#">Logout</a>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+
+        <section class="profile-card">
+
+            <div class="profile-image">
+                👤
+            </div>
+
+            <h2>Piyush Gautam</h2>
+            <p>eventuser@example.com</p>
+
+            <button id="editButton">
+                Edit Profile
+            </button>
+
+        </section>
+
+        <section class="profile-details">
+
+            <h2>Personal Information</h2>
+
+            <div class="info-grid">
+
+                <div>
+                    <label>Full Name</label>
+                    <p id="userName">Piyush Gautam</p>
+                </div>
+
+                <div>
+                    <label>Email</label>
+                    <p id="userEmail">eventuser@example.com</p>
+                </div>
+
+                <div>
+                    <label>Phone</label>
+                    <p id="userPhone">+91 98765 43210</p>
+                </div>
+
+                <div>
+                    <label>Location</label>
+                    <p id="userLocation">India</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="booking-section">
+
+            <h2>Booking History</h2>
+
+            <div class="booking-card">
+                <div>
+                    <h3>Live Music Festival</h3>
+                    <p>15 October 2026</p>
+                    <p>2 Tickets</p>
+                </div>
+
+                <span class="confirmed">
+                    Confirmed
+                </span>
+            </div>
+
+            <div class="booking-card">
+                <div>
+                    <h3>Tech Innovation Summit</h3>
+                    <p>22 October 2026</p>
+                    <p>1 Ticket</p>
+                </div>
+
+                <span class="confirmed">
+                    Confirmed
+                </span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="profile.js"></script>
+
+</body>
+</html>
