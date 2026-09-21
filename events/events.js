@@ -1,58 +1,52 @@
-// Event data
-const events = [
-    {
-        id: 1,
-        name: "Live Music Festival",
-        date: "15 October 2026",
-        time: "6:00 PM",
-        venue: "Mathura Stadium",
-        description: "Enjoy live music performances and entertainment.",
-        ticketPrice: 499
-    },
-    {
-        id: 2,
-        name: "Tech Innovation Summit",
-        date: "22 October 2026",
-        time: "10:00 AM",
-        venue: "India Expo Centre",
-        description: "Explore technology, innovation and new ideas.",
-        ticketPrice: 799
-    },
-    {
-        id: 3,
-        name: "University Sports Meet",
-        date: "28 October 2026",
-        time: "9:00 AM",
-        venue: "University Ground",
-        description: "Enjoy exciting university sports activities.",
-        ticketPrice: 299
-    }
-];
+let events = [];
 
 const eventList = document.getElementById("eventList");
-const eventDetails = document.getElementById("eventDetails");
-const eventSelect = document.getElementById("eventSelect");
-const ticketQuantity = document.getElementById("ticketQuantity");
-const totalPrice = document.getElementById("totalPrice");
-const bookButton = document.getElementById("bookButton");
+const search = document.getElementById("search");
+const category = document.getElementById("category");
+const noResult = document.getElementById("noResult");
 
-// Display event cards
-function displayEvents() {
+const eventSelect = document.getElementById("eventSelect");
+const quantity = document.getElementById("quantity");
+const total = document.getElementById("total");
+
+const bookingForm = document.getElementById("bookingForm");
+const bookingMessage = document.getElementById("bookingMessage");
+
+fetch("events.json")
+    .then(response => response.json())
+    .then(data => {
+        events = data;
+        displayEvents(events);
+        loadEventOptions(events);
+    });
+
+function displayEvents(data) {
+
     eventList.innerHTML = "";
 
-    events.forEach(function (event) {
+    if (data.length === 0) {
+        noResult.style.display = "block";
+        return;
+    }
+
+    noResult.style.display = "none";
+
+    data.forEach(event => {
+
         const card = document.createElement("div");
 
         card.className = "event-card";
 
         card.innerHTML = `
+            <div class="icon">🎫</div>
+            <span>${event.category}</span>
             <h3>${event.name}</h3>
-            <p><strong>Date:</strong> ${event.date}</p>
-            <p><strong>Time:</strong> ${event.time}</p>
-            <p><strong>Venue:</strong> ${event.venue}</p>
-            <p><strong>Ticket Price:</strong> ₹${event.ticketPrice}</p>
-            <button onclick="showEventDetails(${event.id})">
-                View Details
+            <p>📅 ${event.date}</p>
+            <p>⏰ ${event.time}</p>
+            <p>📍 ${event.venue}</p>
+            <p>₹${event.price} per ticket</p>
+            <button onclick="selectEvent(${event.id})">
+                Book Now
             </button>
         `;
 
@@ -60,94 +54,106 @@ function displayEvents() {
     });
 }
 
-// Show event details
-function showEventDetails(eventId) {
-    const event = events.find(function (item) {
-        return item.id === eventId;
-    });
+function loadEventOptions(data) {
 
-    eventDetails.innerHTML = `
-        <h3>${event.name}</h3>
-        <p><strong>Date:</strong> ${event.date}</p>
-        <p><strong>Time:</strong> ${event.time}</p>
-        <p><strong>Venue:</strong> ${event.venue}</p>
-        <p><strong>Description:</strong> ${event.description}</p>
-        <p><strong>Ticket Price:</strong> ₹${event.ticketPrice}</p>
-    `;
+    data.forEach(event => {
 
-    eventSelect.value = event.id;
-    calculateTotal();
-}
-
-// Add events to dropdown
-function populateEventDropdown() {
-    events.forEach(function (event) {
         const option = document.createElement("option");
 
         option.value = event.id;
-        option.textContent =
-            `${event.name} - ₹${event.ticketPrice}`;
+        option.textContent = event.name;
 
         eventSelect.appendChild(option);
     });
 }
 
-// Calculate total ticket price
-function calculateTotal() {
-    const selectedEventId = Number(eventSelect.value);
-    const quantity = Number(ticketQuantity.value);
+function filterEvents() {
 
-    const selectedEvent = events.find(function (event) {
-        return event.id === selectedEventId;
+    const searchText = search.value.toLowerCase();
+    const selectedCategory = category.value;
+
+    const filtered = events.filter(event => {
+
+        const matchesSearch =
+            event.name.toLowerCase().includes(searchText);
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            event.category === selectedCategory;
+
+        return matchesSearch && matchesCategory;
     });
 
-    if (selectedEvent && quantity > 0) {
-        totalPrice.textContent =
-            selectedEvent.ticketPrice * quantity;
-    } else {
-        totalPrice.textContent = "0";
-    }
+    displayEvents(filtered);
 }
 
-// Update total when event changes
-eventSelect.addEventListener("change", function () {
+search.addEventListener("input", filterEvents);
+category.addEventListener("change", filterEvents);
+
+function selectEvent(id) {
+
+    eventSelect.value = id;
+
+    document.getElementById("booking")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
     calculateTotal();
-});
+}
 
-// Update total when ticket quantity changes
-ticketQuantity.addEventListener("input", function () {
-    calculateTotal();
-});
+function calculateTotal() {
 
-// Booking button
-bookButton.addEventListener("click", function () {
-    const selectedEventId = Number(eventSelect.value);
-    const quantity = Number(ticketQuantity.value);
+    const selectedId = Number(eventSelect.value);
+    const selectedEvent =
+        events.find(event => event.id === selectedId);
 
-    if (!selectedEventId) {
-        alert("Please select an event.");
+    const ticketQuantity = Number(quantity.value);
+
+    if (!selectedEvent) {
+        total.textContent = "₹0";
         return;
     }
 
-    if (quantity < 1) {
-        alert("Please enter at least 1 ticket.");
+    total.textContent =
+        "₹" + selectedEvent.price * ticketQuantity;
+}
+
+eventSelect.addEventListener("change", calculateTotal);
+quantity.addEventListener("input", calculateTotal);
+
+bookingForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("bookingName").value.trim();
+
+    const email =
+        document.getElementById("bookingEmail").value.trim();
+
+    const selectedEvent =
+        events.find(
+            event => event.id === Number(eventSelect.value)
+        );
+
+    if (
+        name === "" ||
+        email === "" ||
+        !selectedEvent
+    ) {
+        bookingMessage.textContent =
+            "Please fill all booking details.";
+
         return;
     }
 
-    const selectedEvent = events.find(function (event) {
-        return event.id === selectedEventId;
-    });
+    bookingMessage.textContent =
+        "Booking confirmed for " +
+        selectedEvent.name +
+        ".";
 
-    const total = selectedEvent.ticketPrice * quantity;
+    bookingForm.reset();
 
-    alert(
-        `Booking confirmed!\n\n` +
-        `Event: ${selectedEvent.name}\n` +
-        `Tickets: ${quantity}\n` +
-        `Total Price: ₹${total}`
-    );
+    total.textContent = "₹0";
 });
-
-// Start the page
-displayEvents();
-populateEventDropdown();

@@ -3,68 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Events</title>
-
+    <title>EventHub - Events</title>
     <link rel="stylesheet" href="events.css">
 </head>
-
 <body>
 
     <header>
-        <h1>Event Management & Ticket Booking</h1>
-        <p>Explore Upcoming Events</p>
+        <h1>Event<span>Hub</span></h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#events">Events</a>
+            <a href="#booking">Booking</a>
+        </nav>
     </header>
 
-    <main>
+    <section class="top-section">
+        <h2>Discover Events</h2>
+        <p>Find and book your favorite events.</p>
 
-        <section>
-            <h2>Available Events</h2>
+        <div class="filters">
+            <input
+                type="text"
+                id="search"
+                placeholder="Search event..."
+            >
 
-            <div id="eventList">
-                <!-- Events will appear here -->
-            </div>
-        </section>
+            <select id="category">
+                <option value="all">All Categories</option>
+                <option value="Music">Music</option>
+                <option value="Technology">Technology</option>
+                <option value="Sports">Sports</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+        </div>
+    </section>
 
-        <section>
-            <h2>Event Details</h2>
+    <main id="events">
 
-            <div id="eventDetails">
-                <p>Select an event to see its details.</p>
-            </div>
-        </section>
+        <div id="eventList" class="event-list"></div>
 
-        <section>
-            <h2>Book Tickets</h2>
+        <p id="noResult" class="no-result">
+            No events found.
+        </p>
 
-            <label for="eventSelect">Select Event:</label>
+    </main>
+
+    <section id="booking" class="booking-section">
+
+        <h2>Book Your Ticket</h2>
+
+        <form id="bookingForm">
+
+            <input
+                type="text"
+                id="bookingName"
+                placeholder="Full Name"
+            >
+
+            <input
+                type="email"
+                id="bookingEmail"
+                placeholder="Email"
+            >
 
             <select id="eventSelect">
-                <option value="">-- Select Event --</option>
+                <option value="">Select Event</option>
             </select>
-
-            <br><br>
-
-            <label for="ticketQuantity">Number of Tickets:</label>
 
             <input
                 type="number"
-                id="ticketQuantity"
-                min="1"
+                id="quantity"
                 value="1"
+                min="1"
+                max="10"
             >
 
             <p>
-                Total Price:
-                ₹<span id="totalPrice">0</span>
+                Total Amount:
+                <strong id="total">₹0</strong>
             </p>
 
-            <button id="bookButton">
+            <button type="submit">
                 Confirm Booking
             </button>
-        </section>
 
-    </main>
+            <p id="bookingMessage"></p>
+
+        </form>
+
+    </section>
 
     <script src="events.js"></script>
 
