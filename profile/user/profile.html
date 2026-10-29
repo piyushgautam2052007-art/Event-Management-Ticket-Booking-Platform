@@ -3,102 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventHub - Profile</title>
+    <title>EventHub | My Profile</title>
     <link rel="stylesheet" href="profile.css">
 </head>
 <body>
 
-    <header>
-        <h1>Event<span>Hub</span></h1>
+    <header class="navbar">
+        <a href="../../frontend/home/home.html" class="logo">
+            Event<span>Hub</span>
+        </a>
 
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Events</a>
-            <a href="#">Bookings</a>
-            <a href="#">Logout</a>
+            <a href="../../frontend/home/home.html">Home</a>
+            <a href="../../events/events.html">Events</a>
+            <a href="#profile">My Profile</a>
+            <a href="#bookings">My Bookings</a>
         </nav>
+
+        <button id="logoutBtn" class="logout-btn" type="button">
+            Logout
+        </button>
     </header>
 
-    <main class="profile-container">
+    <main class="container">
 
-        <section class="profile-card">
-
-            <div class="profile-image">
-                👤
-            </div>
-
-            <h2>Piyush Gautam</h2>
-            <p>eventuser@example.com</p>
-
-            <button id="editButton">
-                Edit Profile
-            </button>
-
+        <section class="page-heading">
+            <p class="eyebrow">MY ACCOUNT</p>
+            <h1>My Profile</h1>
+            <p>Manage your personal information and view your bookings.</p>
         </section>
 
-        <section class="profile-details">
+        <div class="profile-layout">
 
-            <h2>Personal Information</h2>
+            <aside class="profile-sidebar">
+                <div class="avatar" id="avatar">P</div>
 
-            <div class="info-grid">
+                <h2 id="sidebarName">Pratiksha Sharma</h2>
+                <p id="sidebarEmail">pratiksha@example.com</p>
 
-                <div>
-                    <label>Full Name</label>
-                    <p id="userName">Piyush Gautam</p>
+                <div class="sidebar-links">
+                    <a href="#profile" class="active">Personal Information</a>
+                    <a href="#editProfile">Edit Profile</a>
+                    <a href="#bookings">Booking History</a>
                 </div>
+            </aside>
 
-                <div>
-                    <label>Email</label>
-                    <p id="userEmail">eventuser@example.com</p>
-                </div>
+            <div class="profile-main">
 
-                <div>
-                    <label>Phone</label>
-                    <p id="userPhone">+91 98765 43210</p>
-                </div>
+                <section class="panel" id="profile">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Personal Information</h2>
+                            <p>Your profile details</p>
+                        </div>
 
-                <div>
-                    <label>Location</label>
-                    <p id="userLocation">India</p>
-                </div>
+                        <button
+                            class="outline-btn"
+                            id="editBtn"
+                            type="button"
+                        >
+                            Edit Profile
+                        </button>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail">
+                            <span>Full Name</span>
+                            <strong id="displayName">Pratiksha Sharma</strong>
+                        </div>
+
+                        <div class="detail">
+                            <span>Email Address</span>
+                            <strong id="displayEmail">pratiksha@example.com</strong>
+                        </div>
+
+                        <div class="detail">
+                            <span>Phone Number</span>
+                            <strong id="displayPhone">Not provided</strong>
+                        </div>
+
+                        <div class="detail">
+                            <span>City</span>
+                            <strong id="displayCity">Mathura</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel edit-panel" id="editProfile">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Edit Profile</h2>
+                            <p>Update your personal information</p>
+                        </div>
+                    </div>
+
+                    <form id="profileForm">
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    required
+                                    minlength="2"
+                                    maxlength="60"
+                                    placeholder="Enter your name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    required
+                                    maxlength="100"
+                                    placeholder="Enter your email"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    maxlength="10"
+                                    pattern="[0-9]{10}"
+                                    placeholder="10-digit mobile number"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    maxlength="60"
+                                    placeholder="Enter your city"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button
+                                type="button"
+                                id="cancelBtn"
+                                class="outline-btn"
+                            >
+                                Cancel
+                            </button>
+
+                            <button type="submit" class="primary-btn">
+                                Save Changes
+                            </button>
+                        </div>
+
+                        <p id="profileMessage" role="status"></p>
+                    </form>
+                </section>
+
+                <section class="panel" id="bookings">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Booking History</h2>
+                            <p>Your sample event booking records</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-list" id="bookingList"></div>
+
+                    <p id="emptyBookings" class="empty-state">
+                        No bookings available.
+                    </p>
+                </section>
 
             </div>
-
-        </section>
-
-        <section class="booking-section">
-
-            <h2>Booking History</h2>
-
-            <div class="booking-card">
-                <div>
-                    <h3>Live Music Festival</h3>
-                    <p>15 October 2026</p>
-                    <p>2 Tickets</p>
-                </div>
-
-                <span class="confirmed">
-                    Confirmed
-                </span>
-            </div>
-
-            <div class="booking-card">
-                <div>
-                    <h3>Tech Innovation Summit</h3>
-                    <p>22 October 2026</p>
-                    <p>1 Ticket</p>
-                </div>
-
-                <span class="confirmed">
-                    Confirmed
-                </span>
-            </div>
-
-        </section>
-
+        </div>
     </main>
 
-    <script src="profile.js"></script>
+    <footer>
+        <p>© 2026 EventHub. All rights reserved.</p>
+    </footer>
 
+    <script src="profile.js"></script>
 </body>
 </html>
