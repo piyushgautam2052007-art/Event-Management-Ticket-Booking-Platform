@@ -5,7 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EventHub - Event Management</title>
     <link rel="stylesheet" href="home.css">
+
+    <style>
+        .featured-badge {
+            display: inline-block;
+            background: #fff0c2;
+            color: #8a5700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .benefits-section {
+            padding: 70px 8%;
+            text-align: center;
+            background: #f8f9ff;
+        }
+
+        .benefits-section h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        .benefits-intro {
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 28px 18px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .benefit-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 500px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-section h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <header class="navbar">
@@ -91,11 +173,10 @@
             <div class="event-grid" id="eventGrid">
 
                 <div class="event-card" data-category="music">
-                    <div class="event-image music-image">
-                        🎵
-                    </div>
+                    <div class="event-image music-image">🎵</div>
 
                     <div class="event-content">
+                        <span class="featured-badge">⭐ Featured Event</span>
                         <span class="event-category">Music</span>
 
                         <h3>Live Music Festival</h3>
@@ -116,9 +197,7 @@
                 </div>
 
                 <div class="event-card" data-category="technology">
-                    <div class="event-image tech-image">
-                        💻
-                    </div>
+                    <div class="event-image tech-image">💻</div>
 
                     <div class="event-content">
                         <span class="event-category">Technology</span>
@@ -141,9 +220,7 @@
                 </div>
 
                 <div class="event-card" data-category="sports">
-                    <div class="event-image sports-image">
-                        🏆
-                    </div>
+                    <div class="event-image sports-image">🏆</div>
 
                     <div class="event-content">
                         <span class="event-category">Sports</span>
@@ -166,9 +243,7 @@
                 </div>
 
                 <div class="event-card" data-category="workshop">
-                    <div class="event-image workshop-image">
-                        🎨
-                    </div>
+                    <div class="event-image workshop-image">🎨</div>
 
                     <div class="event-content">
                         <span class="event-category">Workshop</span>
@@ -196,6 +271,54 @@
                 No events found.
             </p>
 
+        </section>
+
+        <section class="benefits-section" id="benefits">
+            <h2>Why Choose EventHub?</h2>
+
+            <p class="benefits-intro">
+                Everything you need to discover your next great experience.
+            </p>
+
+            <div class="benefits-grid">
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎟️</div>
+                    <h3>Easy Booking</h3>
+                    <p>
+                        Explore events and start the ticket-booking process
+                        with a simple interface.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔎</div>
+                    <h3>Find Events</h3>
+                    <p>
+                        Search for events and filter them by your
+                        favourite category.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>
+                        Enjoy a user-friendly layout on mobile phones,
+                        tablets and computers.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎉</div>
+                    <h3>Great Experiences</h3>
+                    <p>
+                        Discover music, sports, technology and creative
+                        workshops in one place.
+                    </p>
+                </div>
+
+            </div>
         </section>
 
         <section class="categories" id="categories">
@@ -291,18 +414,21 @@
                         type="text"
                         id="name"
                         placeholder="Your Name"
+                        required
                     >
 
                     <input
                         type="email"
                         id="email"
                         placeholder="Your Email"
+                        required
                     >
                 </div>
 
                 <textarea
                     id="message"
                     placeholder="Your Message"
+                    required
                 ></textarea>
 
                 <button type="submit" class="primary-btn">
