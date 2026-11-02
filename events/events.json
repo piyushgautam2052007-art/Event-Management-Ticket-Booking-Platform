@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Live Music Festival",
+        "category": "Music",
+        "date": "15 October 2026",
+        "time": "6:00 PM",
+        "venue": "Mathura Stadium",
+        "price": 499,
+        "description": "Enjoy live music performances from talented artists."
+    },
+    {
+        "id": 2,
+        "name": "Tech Innovation Summit",
+        "category": "Technology",
+        "date": "22 October 2026",
+        "time": "10:00 AM",
+        "venue": "India Expo Centre",
+        "price": 799,
+        "description": "Explore technology, innovation and future trends."
+    },
+    {
+        "id": 3,
+        "name": "University Sports Meet",
+        "category": "Sports",
+        "date": "28 October 2026",
+        "time": "9:00 AM",
+        "venue": "University Ground",
+        "price": 299,
+        "description": "A day full of exciting university sports activities."
+    },
+    {
+        "id": 4,
+        "name": "Creative Design Workshop",
+        "category": "Workshop",
+        "date": "2 November 2026",
+        "time": "11:00 AM",
+        "venue": "Creative Hall",
+        "price": 399,
+        "description": "Learn practical creative design skills."
+    }
+]
