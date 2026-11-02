@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub | My Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="../../frontend/home/home.html" class="logo">
+            Event<span>Hub</span>
+        </a>
+
+        <nav>
+            <a href="../../frontend/home/home.html">Home</a>
+            <a href="../../events/events.html">Events</a>
+            <a href="#profile">My Profile</a>
+            <a href="#bookings">My Bookings</a>
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn" type="button">
+            Logout
+        </button>
+    </header>
+
+    <main class="container">
+
+        <section class="page-heading">
+            <p class="eyebrow">MY ACCOUNT</p>
+            <h1>My Profile</h1>
+            <p>Manage your personal information and view your bookings.</p>
+        </section>
+
+        <div class="profile-layout">
+
+            <aside class="profile-sidebar">
+                <div class="avatar" id="avatar">P</div>
+
+                <h2 id="sidebarName">Pratiksha Sharma</h2>
+                <p id="sidebarEmail">pratiksha@example.com</p>
+
+                <div class="sidebar-links">
+                    <a href="#profile" class="active">Personal Information</a>
+                    <a href="#editProfile">Edit Profile</a>
+                    <a href="#bookings">Booking History</a>
+                </div>
+            </aside>
+
+            <div class="profile-main">
+
+                <section class="panel" id="profile">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Personal Information</h2>
+                            <p>Your profile details</p>
+                        </div>
+
+                        <button
+                            class="outline-btn"
+                            id="editBtn"
+                            type="button"
+                        >
+                            Edit Profile
+                        </button>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail">
+                            <span>Full Name</span>
+                            <strong id="displayName">Pratiksha Sharma</strong>
+                        </div>
+
+                        <div class="detail">
+                            <span>Email Address</span>
+                            <strong id="displayEmail">pratiksha@example.com</strong>
+                        </div>
+
+                        <div class="detail">
+                            <span>Phone Number</span>
+                            <strong id="displayPhone">Not provided</strong>
+                        </div>
+
+                        <div class="detail">
+                            <span>City</span>
+                            <strong id="displayCity">Mathura</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel edit-panel" id="editProfile">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Edit Profile</h2>
+                            <p>Update your personal information</p>
+                        </div>
+                    </div>
+
+                    <form id="profileForm">
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    required
+                                    minlength="2"
+                                    maxlength="60"
+                                    placeholder="Enter your name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    required
+                                    maxlength="100"
+                                    placeholder="Enter your email"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    maxlength="10"
+                                    pattern="[0-9]{10}"
+                                    placeholder="10-digit mobile number"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    maxlength="60"
+                                    placeholder="Enter your city"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button
+                                type="button"
+                                id="cancelBtn"
+                                class="outline-btn"
+                            >
+                                Cancel
+                            </button>
+
+                            <button type="submit" class="primary-btn">
+                                Save Changes
+                            </button>
+                        </div>
+
+                        <p id="profileMessage" role="status"></p>
+                    </form>
+                </section>
+
+                <section class="panel" id="bookings">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Booking History</h2>
+                            <p>Your sample event booking records</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-list" id="bookingList"></div>
+
+                    <p id="emptyBookings" class="empty-state">
+                        No bookings available.
+                    </p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 EventHub. All rights reserved.</p>
+    </footer>
+
+    <script src="profile.js"></script>
+</body>
+</html>
