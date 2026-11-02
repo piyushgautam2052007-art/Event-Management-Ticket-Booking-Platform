@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-left">
+            <h1>Event<span>Hub</span></h1>
+            <h2>Discover. Book. Enjoy.</h2>
+            <p>
+                Login to explore events and manage your bookings.
+            </p>
+        </div>
+
+        <div class="login-card">
+
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Login to your account</p>
+
+            <form id="loginForm">
+
+                <label>Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                >
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit">Login</button>
+
+                <p id="loginMessage"></p>
+
+            </form>
+
+            <p class="register-text">
+                Don't have an account?
+                <a href="#">Register</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+</html>
