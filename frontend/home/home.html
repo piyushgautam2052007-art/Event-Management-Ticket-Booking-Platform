@@ -5,95 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EventHub - Event Management</title>
     <link rel="stylesheet" href="home.css">
-
-    <style>
-        .featured-badge {
-            display: inline-block;
-            background: #fff0c2;
-            color: #8a5700;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .benefits-section {
-            padding: 70px 8%;
-            text-align: center;
-            background: #f8f9ff;
-        }
-
-        .benefits-section h2 {
-            font-size: 32px;
-            margin-bottom: 12px;
-            color: #222;
-        }
-
-        .benefits-intro {
-            color: #666;
-            margin-bottom: 35px;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 22px;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 28px 18px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-        }
-
-        .benefit-icon {
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .benefit-card h3 {
-            margin-bottom: 10px;
-            color: #222;
-        }
-
-        .benefit-card p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        @media (max-width: 900px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 500px) {
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-section h2 {
-                font-size: 26px;
-            }
-        }
-    </style>
 </head>
-
 <body>
 
     <header class="navbar">
-        <div class="logo">
-            Event<span>Hub</span>
-        </div>
+        <div class="logo">Event<span>Hub</span></div>
 
         <nav id="navMenu">
             <a href="#home">Home</a>
@@ -116,12 +32,7 @@
         <section class="hero" id="home">
             <div class="hero-content">
                 <p class="hero-small">WELCOME TO EVENTHUB</p>
-
-                <h1>
-                    Discover Events.
-                    <span>Make Memories.</span>
-                </h1>
-
+                <h1>Discover Events.<span>Make Memories.</span></h1>
                 <p class="hero-text">
                     Find exciting events, explore new experiences
                     and book your tickets easily.
@@ -142,11 +53,8 @@
 
         <section class="search-section">
             <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search for events..."
-                >
+                <input type="text" id="searchInput"
+                    placeholder="Search for events...">
 
                 <select id="categorySelect">
                     <option value="all">All Categories</option>
@@ -161,34 +69,22 @@
         </section>
 
         <section class="events-section" id="events">
-
             <div class="section-heading">
                 <p>EXPLORE</p>
                 <h2>Popular Events</h2>
-                <span>
-                    Discover some of the most exciting upcoming events.
-                </span>
+                <span>Discover some of the most exciting upcoming events.</span>
             </div>
 
             <div class="event-grid" id="eventGrid">
 
                 <div class="event-card" data-category="music">
                     <div class="event-image music-image">🎵</div>
-
                     <div class="event-content">
                         <span class="featured-badge">⭐ Featured Event</span>
                         <span class="event-category">Music</span>
-
                         <h3>Live Music Festival</h3>
-
-                        <p class="event-date">
-                            📅 15 October 2026
-                        </p>
-
-                        <p class="event-location">
-                            📍 Mathura, Uttar Pradesh
-                        </p>
-
+                        <p class="event-date">📅 15 October 2026</p>
+                        <p class="event-location">📍 Mathura, Uttar Pradesh</p>
                         <div class="event-bottom">
                             <strong>₹499</strong>
                             <button class="book-btn">Book Now</button>
@@ -198,20 +94,11 @@
 
                 <div class="event-card" data-category="technology">
                     <div class="event-image tech-image">💻</div>
-
                     <div class="event-content">
                         <span class="event-category">Technology</span>
-
                         <h3>Tech Innovation Summit</h3>
-
-                        <p class="event-date">
-                            📅 22 October 2026
-                        </p>
-
-                        <p class="event-location">
-                            📍 New Delhi, India
-                        </p>
-
+                        <p class="event-date">📅 22 October 2026</p>
+                        <p class="event-location">📍 New Delhi, India</p>
                         <div class="event-bottom">
                             <strong>₹799</strong>
                             <button class="book-btn">Book Now</button>
@@ -221,20 +108,11 @@
 
                 <div class="event-card" data-category="sports">
                     <div class="event-image sports-image">🏆</div>
-
                     <div class="event-content">
                         <span class="event-category">Sports</span>
-
                         <h3>University Sports Meet</h3>
-
-                        <p class="event-date">
-                            📅 28 October 2026
-                        </p>
-
-                        <p class="event-location">
-                            📍 Agra, Uttar Pradesh
-                        </p>
-
+                        <p class="event-date">📅 28 October 2026</p>
+                        <p class="event-location">📍 Agra, Uttar Pradesh</p>
                         <div class="event-bottom">
                             <strong>₹299</strong>
                             <button class="book-btn">Book Now</button>
@@ -244,20 +122,11 @@
 
                 <div class="event-card" data-category="workshop">
                     <div class="event-image workshop-image">🎨</div>
-
                     <div class="event-content">
                         <span class="event-category">Workshop</span>
-
                         <h3>Creative Design Workshop</h3>
-
-                        <p class="event-date">
-                            📅 2 November 2026
-                        </p>
-
-                        <p class="event-location">
-                            📍 Mathura, Uttar Pradesh
-                        </p>
-
+                        <p class="event-date">📅 2 November 2026</p>
+                        <p class="event-location">📍 Mathura, Uttar Pradesh</p>
                         <div class="event-bottom">
                             <strong>₹399</strong>
                             <button class="book-btn">Book Now</button>
@@ -267,69 +136,49 @@
 
             </div>
 
-            <p id="noEvents" class="no-events">
-                No events found.
-            </p>
-
+            <p id="noEvents" class="no-events">No events found.</p>
         </section>
 
         <section class="benefits-section" id="benefits">
             <h2>Why Choose EventHub?</h2>
-
             <p class="benefits-intro">
                 Everything you need to discover your next great experience.
             </p>
 
             <div class="benefits-grid">
-
                 <div class="benefit-card">
                     <div class="benefit-icon">🎟️</div>
                     <h3>Easy Booking</h3>
-                    <p>
-                        Explore events and start the ticket-booking process
-                        with a simple interface.
-                    </p>
+                    <p>Explore events and start the ticket-booking process with a simple interface.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">🔎</div>
                     <h3>Find Events</h3>
-                    <p>
-                        Search for events and filter them by your
-                        favourite category.
-                    </p>
+                    <p>Search for events and filter them by your favourite category.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">📱</div>
                     <h3>Responsive Design</h3>
-                    <p>
-                        Enjoy a user-friendly layout on mobile phones,
-                        tablets and computers.
-                    </p>
+                    <p>Enjoy a user-friendly layout on mobile phones, tablets and computers.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">🎉</div>
                     <h3>Great Experiences</h3>
-                    <p>
-                        Discover music, sports, technology and creative
-                        workshops in one place.
-                    </p>
+                    <p>Discover music, sports, technology and creative workshops in one place.</p>
                 </div>
-
             </div>
         </section>
 
         <section class="categories" id="categories">
-
             <div class="section-heading">
                 <p>CATEGORIES</p>
                 <h2>Find Events By Category</h2>
             </div>
 
             <div class="category-grid">
-
                 <div class="category-card">
                     <div>🎵</div>
                     <h3>Music</h3>
@@ -353,27 +202,28 @@
                     <h3>Workshop</h3>
                     <p>Learn new skills and ideas</p>
                 </div>
-
             </div>
+        </section>
 
+        <section class="offer-section">
+            <div class="offer-content">
+                <span class="offer-tag">LIMITED TIME OFFER</span>
+                <h2>Make Your Next Event Special!</h2>
+                <p>Discover amazing events and enjoy exciting experiences with your friends.</p>
+                <a href="#events" class="offer-btn">Explore Events</a>
+            </div>
+            <div class="offer-icon">🎉</div>
         </section>
 
         <section class="about-section" id="about">
-
             <div class="about-content">
                 <p>ABOUT US</p>
-
-                <h2>
-                    Making Event Booking
-                    Simple and Convenient
-                </h2>
-
+                <h2>Making Event Booking Simple and Convenient</h2>
                 <p>
                     EventHub is a frontend-based event management platform
                     designed to help users discover events and experience
                     a simple ticket booking interface.
                 </p>
-
                 <p>
                     Users can browse events, explore event information
                     and continue to the booking process through an
@@ -386,71 +236,64 @@
                     <strong>100+</strong>
                     <span>Events</span>
                 </div>
-
                 <div class="about-stat">
                     <strong>10K+</strong>
                     <span>Users</span>
                 </div>
-
                 <div class="about-stat">
                     <strong>24/7</strong>
                     <span>Access</span>
                 </div>
             </div>
+        </section>
 
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <p class="newsletter-label">STAY UPDATED</p>
+                <h2>Never Miss an Event!</h2>
+                <p>Get updates about upcoming events, offers and exciting experiences.</p>
+
+                <form class="newsletter-form">
+                    <input type="email"
+                        placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </section>
 
         <section class="contact-section" id="contact">
-
             <div class="section-heading">
                 <p>CONTACT</p>
                 <h2>Get In Touch</h2>
             </div>
 
             <form class="contact-form" id="contactForm">
-
                 <div class="form-row">
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Your Name"
-                        required
-                    >
+                    <input type="text" id="name"
+                        placeholder="Your Name" required>
 
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Your Email"
-                        required
-                    >
+                    <input type="email" id="email"
+                        placeholder="Your Email" required>
                 </div>
 
-                <textarea
-                    id="message"
-                    placeholder="Your Message"
-                    required
-                ></textarea>
+                <textarea id="message"
+                    placeholder="Your Message" required></textarea>
 
                 <button type="submit" class="primary-btn">
                     Send Message
                 </button>
 
                 <p id="formMessage"></p>
-
             </form>
-
         </section>
 
     </main>
 
     <footer>
         <div class="footer-content">
-
             <div>
                 <h2>Event<span>Hub</span></h2>
-                <p>
-                    Discover events and make memorable experiences.
-                </p>
+                <p>Discover events and make memorable experiences.</p>
             </div>
 
             <div>
@@ -465,7 +308,6 @@
                 <p>eventhub@example.com</p>
                 <p>+91 98765 43210</p>
             </div>
-
         </div>
 
         <div class="copyright">
@@ -474,6 +316,5 @@
     </footer>
 
     <script src="home.js"></script>
-
 </body>
 </html>
