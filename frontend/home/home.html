@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
 <body>
 
     <header class="navbar">
-        <div class="logo">Event<span>Hub</span></div>
+        <a href="#home" class="logo">Event<span>Hub</span></a>
 
         <nav id="navMenu">
             <a href="#home">Home</a>
@@ -20,11 +21,12 @@
         </nav>
 
         <div class="nav-buttons">
-            <a href="#" class="login-btn">Login</a>
-            <a href="#" class="signup-btn">Sign Up</a>
+            <a href="../../authentication/login/login.html" class="login-btn">Login</a>
+            <a href="../../profile/user/profile.html" class="profile-btn">Profile</a>
+            <a href="../../authentication/signup/signup.html" class="signup-btn">Sign Up</a>
         </div>
 
-        <button class="menu-btn" id="menuBtn">☰</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </header>
 
     <main>
@@ -32,7 +34,9 @@
         <section class="hero" id="home">
             <div class="hero-content">
                 <p class="hero-small">WELCOME TO EVENTHUB</p>
+
                 <h1>Discover Events.<span>Make Memories.</span></h1>
+
                 <p class="hero-text">
                     Find exciting events, explore new experiences
                     and book your tickets easily.
@@ -53,8 +57,11 @@
 
         <section class="search-section">
             <div class="search-box">
-                <input type="text" id="searchInput"
-                    placeholder="Search for events...">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search for events..."
+                >
 
                 <select id="categorySelect">
                     <option value="all">All Categories</option>
@@ -79,12 +86,16 @@
 
                 <div class="event-card" data-category="music">
                     <div class="event-image music-image">🎵</div>
+
                     <div class="event-content">
                         <span class="featured-badge">⭐ Featured Event</span>
                         <span class="event-category">Music</span>
+
                         <h3>Live Music Festival</h3>
+
                         <p class="event-date">📅 15 October 2026</p>
                         <p class="event-location">📍 Mathura, Uttar Pradesh</p>
+
                         <div class="event-bottom">
                             <strong>₹499</strong>
                             <button class="book-btn">Book Now</button>
@@ -94,11 +105,15 @@
 
                 <div class="event-card" data-category="technology">
                     <div class="event-image tech-image">💻</div>
+
                     <div class="event-content">
                         <span class="event-category">Technology</span>
+
                         <h3>Tech Innovation Summit</h3>
+
                         <p class="event-date">📅 22 October 2026</p>
                         <p class="event-location">📍 New Delhi, India</p>
+
                         <div class="event-bottom">
                             <strong>₹799</strong>
                             <button class="book-btn">Book Now</button>
@@ -108,11 +123,15 @@
 
                 <div class="event-card" data-category="sports">
                     <div class="event-image sports-image">🏆</div>
+
                     <div class="event-content">
                         <span class="event-category">Sports</span>
+
                         <h3>University Sports Meet</h3>
+
                         <p class="event-date">📅 28 October 2026</p>
                         <p class="event-location">📍 Agra, Uttar Pradesh</p>
+
                         <div class="event-bottom">
                             <strong>₹299</strong>
                             <button class="book-btn">Book Now</button>
@@ -122,11 +141,15 @@
 
                 <div class="event-card" data-category="workshop">
                     <div class="event-image workshop-image">🎨</div>
+
                     <div class="event-content">
                         <span class="event-category">Workshop</span>
+
                         <h3>Creative Design Workshop</h3>
+
                         <p class="event-date">📅 2 November 2026</p>
                         <p class="event-location">📍 Mathura, Uttar Pradesh</p>
+
                         <div class="event-bottom">
                             <strong>₹399</strong>
                             <button class="book-btn">Book Now</button>
@@ -141,11 +164,13 @@
 
         <section class="benefits-section" id="benefits">
             <h2>Why Choose EventHub?</h2>
+
             <p class="benefits-intro">
                 Everything you need to discover your next great experience.
             </p>
 
             <div class="benefits-grid">
+
                 <div class="benefit-card">
                     <div class="benefit-icon">🎟️</div>
                     <h3>Easy Booking</h3>
@@ -169,6 +194,7 @@
                     <h3>Great Experiences</h3>
                     <p>Discover music, sports, technology and creative workshops in one place.</p>
                 </div>
+
             </div>
         </section>
 
@@ -179,6 +205,7 @@
             </div>
 
             <div class="category-grid">
+
                 <div class="category-card">
                     <div>🎵</div>
                     <h3>Music</h3>
@@ -202,6 +229,7 @@
                     <h3>Workshop</h3>
                     <p>Learn new skills and ideas</p>
                 </div>
+
             </div>
         </section>
 
@@ -212,18 +240,22 @@
                 <p>Discover amazing events and enjoy exciting experiences with your friends.</p>
                 <a href="#events" class="offer-btn">Explore Events</a>
             </div>
+
             <div class="offer-icon">🎉</div>
         </section>
 
         <section class="about-section" id="about">
             <div class="about-content">
                 <p>ABOUT US</p>
+
                 <h2>Making Event Booking Simple and Convenient</h2>
+
                 <p>
                     EventHub is a frontend-based event management platform
                     designed to help users discover events and experience
                     a simple ticket booking interface.
                 </p>
+
                 <p>
                     Users can browse events, explore event information
                     and continue to the booking process through an
@@ -232,32 +264,46 @@
             </div>
 
             <div class="about-box">
+
                 <div class="about-stat">
                     <strong>100+</strong>
                     <span>Events</span>
                 </div>
+
                 <div class="about-stat">
                     <strong>10K+</strong>
                     <span>Users</span>
                 </div>
+
                 <div class="about-stat">
                     <strong>24/7</strong>
                     <span>Access</span>
                 </div>
+
             </div>
         </section>
 
         <section class="newsletter-section">
             <div class="newsletter-content">
                 <p class="newsletter-label">STAY UPDATED</p>
-                <h2>Never Miss an Event!</h2>
-                <p>Get updates about upcoming events, offers and exciting experiences.</p>
 
-                <form class="newsletter-form">
-                    <input type="email"
-                        placeholder="Enter your email address" required>
+                <h2>Never Miss an Event!</h2>
+
+                <p>
+                    Get updates about upcoming events, offers and exciting experiences.
+                </p>
+
+                <form class="newsletter-form" id="newsletterForm">
+                    <input
+                        type="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
                     <button type="submit">Subscribe</button>
                 </form>
+
+                <p id="newsletterMessage"></p>
             </div>
         </section>
 
@@ -268,16 +314,28 @@
             </div>
 
             <form class="contact-form" id="contactForm">
-                <div class="form-row">
-                    <input type="text" id="name"
-                        placeholder="Your Name" required>
 
-                    <input type="email" id="email"
-                        placeholder="Your Email" required>
+                <div class="form-row">
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your Email"
+                        required
+                    >
                 </div>
 
-                <textarea id="message"
-                    placeholder="Your Message" required></textarea>
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
 
                 <button type="submit" class="primary-btn">
                     Send Message
@@ -291,6 +349,7 @@
 
     <footer>
         <div class="footer-content">
+
             <div>
                 <h2>Event<span>Hub</span></h2>
                 <p>Discover events and make memorable experiences.</p>
@@ -308,6 +367,7 @@
                 <p>eventhub@example.com</p>
                 <p>+91 98765 43210</p>
             </div>
+
         </div>
 
         <div class="copyright">
@@ -315,6 +375,83 @@
         </div>
     </footer>
 
+    <!-- Booking Success Modal -->
+
+    <div class="modal-overlay" id="bookingModal">
+
+        <div class="booking-modal">
+
+            <button class="modal-close" id="closeModal" aria-label="Close">
+                &times;
+            </button>
+
+            <div class="modal-decoration decoration-one"></div>
+            <div class="modal-decoration decoration-two"></div>
+
+            <div class="success-animation">
+                <div class="success-circle">
+                    <span>✓</span>
+                </div>
+
+                <i class="confetti confetti-one"></i>
+                <i class="confetti confetti-two"></i>
+                <i class="confetti confetti-three"></i>
+                <i class="confetti confetti-four"></i>
+                <i class="confetti confetti-five"></i>
+                <i class="confetti confetti-six"></i>
+            </div>
+
+            <div class="modal-ticket">🎟️</div>
+
+            <div class="modal-heading">
+                <p class="modal-label">EVENTHUB BOOKING</p>
+
+                <h2>Great Choice!</h2>
+
+                <p class="modal-description">
+                    You have selected an amazing event.
+                </p>
+            </div>
+
+            <div class="selected-event">
+                <p>You selected:</p>
+                <h3 id="modalEventName">Event Name</h3>
+            </div>
+
+            <div class="event-information">
+
+                <div class="information-item">
+                    <span>📅</span>
+                    <p id="modalEventDate">Event Date</p>
+                </div>
+
+                <div class="information-divider"></div>
+
+                <div class="information-item">
+                    <span>📍</span>
+                    <p id="modalEventLocation">Event Location</p>
+                </div>
+
+            </div>
+
+            <div class="booking-notice">
+                <span>🎟️</span>
+                <p>Booking feature is coming soon!</p>
+            </div>
+
+            <button class="modal-ok-btn" id="okModal">
+                OK <span>›</span>
+            </button>
+
+            <p class="modal-footer-text">
+                Thank you for choosing EventHub!
+            </p>
+
+        </div>
+
+    </div>
+
     <script src="home.js"></script>
+
 </body>
 </html>
