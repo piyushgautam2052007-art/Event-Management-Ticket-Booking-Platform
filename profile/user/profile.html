@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EventHub | My Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a href="../../frontend/home/home.html" class="logo">
+            Event<span>Hub</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="../../frontend/home/home.html">Home</a>
+            <a href="../../events/events.html">Events</a>
+            <a href="profile.html" class="active">My Profile</a>
+        </nav>
+
+        <button class="logout-btn" id="logoutBtn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <div class="page-heading">
+            <div>
+                <h1>My Profile</h1>
+                <p>Manage your personal information and bookings.</p>
+            </div>
+        </div>
+
+
+        <section class="profile-overview">
+
+            <div class="avatar" id="profileAvatar">
+                PG
+            </div>
+
+            <div class="profile-intro">
+
+                <h2 id="displayName">Pratiksha Sharma</h2>
+
+                <p id="displayEmail">
+                    pratiksha@example.com
+                </p>
+
+                <span class="member-badge">
+                    EventHub Member
+                </span>
+
+            </div>
+
+            <button class="edit-btn" id="editProfileBtn">
+                Edit Profile
+            </button>
+
+        </section>
+
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <span>Total Bookings</span>
+                <h2 id="totalBookings">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Confirmed</span>
+                <h2 id="confirmedBookings">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <h2 id="completedBookings">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Cancelled</span>
+                <h2 id="cancelledBookings">0</h2>
+            </div>
+
+        </section>
+
+
+        <!-- Personal Information -->
+        <section class="content-card">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Personal Information</h2>
+                    <p>Your account information</p>
+                </div>
+
+                <button class="text-btn" id="editInfoBtn">
+                    Edit Information
+                </button>
+
+            </div>
+
+            <div class="information-grid">
+
+                <div class="info-item">
+                    <label>Full Name</label>
+                    <p id="infoName">Pratiksha Sharma</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Email Address</label>
+                    <p id="infoEmail">pratiksha@example.com</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Phone Number</label>
+                    <p id="infoPhone">+91 9876543210</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Gender</label>
+                    <p id="infoGender">Not specified</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Date of Birth</label>
+                    <p id="infoDob">Not specified</p>
+                </div>
+
+                <div class="info-item">
+                    <label>City</label>
+                    <p id="infoCity">Mathura</p>
+                </div>
+
+                <div class="info-item full-width">
+                    <label>Address</label>
+                    <p id="infoAddress">Not specified</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="content-card">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>My Bookings</h2>
+                    <p>View your event booking history</p>
+                </div>
+
+                <span class="booking-count" id="bookingCount">
+                    0 Bookings
+                </span>
+
+            </div>
+
+
+            <div class="booking-filters">
+
+                <button class="filter-btn active"
+                    data-filter="All">
+                    All
+                </button>
+
+                <button class="filter-btn"
+                    data-filter="Confirmed">
+                    Confirmed
+                </button>
+
+                <button class="filter-btn"
+                    data-filter="Completed">
+                    Completed
+                </button>
+
+                <button class="filter-btn"
+                    data-filter="Cancelled">
+                    Cancelled
+                </button>
+
+            </div>
+
+
+            <!-- Booking Cards -->
+            <div id="bookingList" class="booking-list"></div>
+
+            <div id="emptyBookings" class="empty-state">
+
+                <div class="empty-icon">🎫</div>
+
+                <h3>No Bookings Found</h3>
+
+                <p>
+                    Your event bookings will appear here.
+                </p>
+
+                <a href="../../frontend/home/home.html">
+                    Explore Events
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <div class="modal" id="profileModal">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h2>Edit Profile</h2>
+
+                    <button id="closeModal" class="close-btn">
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <form id="profileForm">
+
+                    <div class="form-group">
+
+                        <label for="editName">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="editName"
+                            required
+                            minlength="2"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editEmail">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editPhone">Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="editPhone"
+                            maxlength="10"
+                            placeholder="10 digit number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="editGender">Gender</label>
+
+                            <select id="editGender">
+                                <option value="">Select Gender</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">
+                                    Prefer not to say
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="editDob">Date of Birth</label>
+
+                            <input type="date" id="editDob">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editCity">City</label>
+
+                        <input type="text" id="editCity">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editAddress">Address</label>
+
+                        <textarea
+                            id="editAddress"
+                            rows="3"
+                        ></textarea>
+
+                    </div>
+
+
+                    <p id="formError" class="form-error"></p>
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            id="cancelEdit"
+                            class="cancel-btn">
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="save-btn">
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+   
+        <div id="notification" class="notification"></div>
+
+    </main>
+
+
+   
+    <footer class="footer">
+
+        <h2>Event<span>Hub</span></h2>
+
+        <p>
+            Discover events. Make memories.
+        </p>
+
+        <p class="copyright">
+            © 2026 EventHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="profile.js"></script>
+
+</body>
+</html>

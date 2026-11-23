@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f3ff;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 60px;
+}
+
+.auth-left {
+    width: 420px;
+}
+
+.auth-left h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.auth-left h1 span {
+    color: #6c4df6;
+}
+
+.auth-left h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.auth-left p {
+    color: #666;
+    font-size: 17px;
+}
+
+.login-card {
+    width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h2 {
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #777;
+    margin: 8px 0 25px;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card label {
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    margin-bottom: 18px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.options input {
+    width: auto;
+    margin: 0;
+}
+
+.options a,
+.register-text a {
+    color: #6c4df6;
+}
+
+.login-card button {
+    border: none;
+    padding: 13px;
+    background: #6c4df6;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#loginMessage {
+    margin-top: 15px;
+    text-align: center;
+    color: #6c4df6;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+}
+
+@media (max-width: 700px) {
+
+    .auth-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .auth-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .auth-left h2 {
+        font-size: 30px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
